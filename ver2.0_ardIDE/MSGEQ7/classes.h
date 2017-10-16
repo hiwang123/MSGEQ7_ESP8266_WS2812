@@ -176,7 +176,9 @@ class octave {
     }
 
     void readVal() {
+      //analogVal[bufferSize - 1] = random(minVal, maxVal);
       analogVal[bufferSize - 1] = constrain(analogRead(A0), minVal, maxVal);
+      Serial.println(analogVal[bufferSize - 1]);
      /*      DEBUGGING_L(iPosStart);
             DEBUGGING_L(":  ");
             DEBUGGING_L(analogVal[bufferSize - 1]);
@@ -199,6 +201,7 @@ class octave {
       //  DEBUGGING_L(weightSum);
       //  DEBUGGING_L("-->");
       //  DEBUGGING(pixelSum/weightSum);
+
 
       pixelsVal =  map((int)(pixelSum / weightSum), minVal, maxVal, 0, numOfLedsSingle);
     }
@@ -281,3 +284,4 @@ class octave {
 
 
 };
+
